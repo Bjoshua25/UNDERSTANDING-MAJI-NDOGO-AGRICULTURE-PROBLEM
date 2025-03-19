@@ -1,7 +1,7 @@
 # **UNDERSTANDING MAJI NDOGO'S AGRICULTURE PROBLEM**  
 **_Python Data Analysis & Regression Modeling_**  
 
-![](cover_image_3)
+![](cover_image_3.avif)
 
 ## **INTRODUCTION**  
 Maji Ndogo, an **imaginary country**, is facing agricultural challenges due to **geographic, weather, and soil conditions**. This project aims to **analyze farming data**, understand key factors influencing **crop yield**, and develop a **predictive model** to assist in optimizing farm production.  
@@ -56,6 +56,8 @@ The dataset is stored in an **SQLite database** and consists of multiple tables:
 ## **EXPLORATORY DATA ANALYSIS (EDA)**  
 EDA was performed to explore **how environmental factors influence crop yield**.  
 
+![](distribution_standard_yield.png)
+
 ### **1. Data Overview**  
 - Extracted **multiple tables from SQLite** and merged into a single **pandas DataFrame**.  
 - Checked for **missing values** and handled inconsistencies.  
@@ -63,6 +65,10 @@ EDA was performed to explore **how environmental factors influence crop yield**.
 ### **2. Feature Distributions**  
 - **Histograms & Box Plots** for rainfall, temperature, soil fertility, and pollution levels.  
 - **Scatter Plots** to visualize relationships between yield and environmental factors.  
+
+Crop Yield                 |         Soil Fertility
+|:------------------------:|:-----------------------:|
+![](crop_yields.png)       |  ![](soil_fertility.png)
 
 ### **3. Correlation Analysis**  
 - **Heatmap** showing relationships between rainfall, temperature, soil type, and crop yield.  
@@ -72,6 +78,9 @@ EDA was performed to explore **how environmental factors influence crop yield**.
 - **Temperature and Rainfall** are major predictors of crop yield.  
 - **Soil Fertility** significantly influences standardized yield.  
 - **Some locations are more suitable for specific crops** due to their environmental conditions.  
+
+  ![](average_temp_vs_yield.png)
+  ![](standard_yield_vs_pollution_level.png)
 
 ---
 
@@ -84,6 +93,8 @@ To **predict standardized crop yield**, we implemented **Simple Linear Regressio
 - **Model Used**: `sklearn.linear_model.LinearRegression`  
 - **Training & Testing**: Dataset split into **80% training, 20% testing**.  
 
+![](pollution_level_vs_yield_linear_model.png)
+
 ### **2. Model Evaluation**  
 - **Mean Absolute Error (MAE)** – Measures average prediction error.  
 - **Mean Squared Error (MSE)** – Penalizes large errors.  
@@ -95,7 +106,10 @@ To **predict standardized crop yield**, we implemented **Simple Linear Regressio
 - **Scatter Plot:** Relationship between rainfall, temperature, and crop yield.  
 - **Correlation Heatmap:** Identifies strongest predictors for crop yield.  
 - **Regression Line Plot:** Shows **linear relationship** between environmental factors and yield.  
-- **Residual Plot:** Evaluates model accuracy by checking prediction errors.  
+- **Residual Plot:** Evaluates model accuracy by checking prediction errors.
+
+![](distribution_residuals.png)
+![](residual_vs_predicted_values.png)
 
 ---
 
